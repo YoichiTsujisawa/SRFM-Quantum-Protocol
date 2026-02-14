@@ -82,8 +82,8 @@ This project is licensed under the **Creative Commons Attribution-NonCommercial 
 ## Contact for Commercial Licensing
 For commercial usage, joint research, or technical advisory, please contact the author:
 
-**Yoichi** (Independent Researcher)
-* **Email:** [Your Contact Email]
+**Yoichi Tsujisawa** (Independent Researcher)
+* **Email:** [yoichiwind@gmail.com]
 * **Profile:** [Link to Zenodo or other profile if available]
 
 ---
