@@ -28,7 +28,7 @@ The experiments were conducted on the **IBM Quantum 'ibm_marrakesh'** backend, u
 
 * **Platform:** IBM Quantum Platform
 * **Backend:** `ibm_marrakesh` (156-qubit Heron Processor)
-* **Shots:** 4000
+* **Shots:** 1024
 * **Optimization Level:** 1 (Light optimization to preserve intentional noise)
 
 ### 1. Robustness against Gate Errors (2-Qubit)
