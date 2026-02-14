@@ -17,7 +17,7 @@ This protocol demonstrates that noise and decoherence can be harnessed to form a
 ## Key Features
 * **Noise Resilience:** Maintains >90% fidelity under significant gate errors (e.g., $Rx(0.9\pi)$).
 * **Calibration-Free:** Operates robustly without precise pulse calibration, treating errors as a resource.
-* **Subspace Stabilization:** Convergence to a specific eigenspace (e.g., $|1*1\rangle$ in 3-qubit systems) rather than a single point, providing structural stability.
+* **Subspace Stabilization:** Convergence to a specific eigenspace (e.g., $|111\rangle$ in 3-qubit systems) rather than a single point, providing structural stability.
 
 ---
 
@@ -35,15 +35,21 @@ The experiments were conducted on the **IBM Quantum 'ibm_marrakesh'** backend, u
 Testing with intentional $10\%$ under-rotation ($Rx(0.9\pi)$) on IBM Quantum hardware.
 * **Result:** The target state $|11\rangle$ achieved **>90% probability**, significantly outperforming standard amplitude amplification which collapses under similar errors.
 
+![Experiment A Result](experiment_a.png)
+
 ### 2. Resilience to Decoherence (Idle Noise)
 Testing with inserted `Identity` gates and `Barriers` to induce relaxation.
 * **Result:** The system self-corrected the phase drift, maintaining the target peak despite the extended circuit duration.
+
+![Experiment B Result](experiment_b.png)
 
 ### 3. Scalability (3-Qubit Expansion)
 Despite the increased circuit depth and connectivity overhead, the protocol successfully identified the target subspace.
 * **Observation:** Convergence to $|111\rangle$ and $|101\rangle$ suggests the formation of a **Decoherence-Free Subspace (DFS)-like structure**.
 
-*(Please refer to the `/results` folder for raw Qiskit job data and histograms.)*
+![Experiment C Result](experiment_c.png)
+
+*(Please refer to the `/results` folder for raw Qiskit job data.)*
 
 ---
 
@@ -83,8 +89,7 @@ This project is licensed under the **Creative Commons Attribution-NonCommercial 
 For commercial usage, joint research, or technical advisory, please contact the author:
 
 **Yoichi Tsujisawa** (Independent Researcher)
-* **Email:** [yoichiwind@gmail.com]
-* **Profile:** [Link to Zenodo or other profile if available]
+* **Email:** yoichiwind@gmail.com
 
 ---
 *© 2026 Yoichi. All rights reserved.*
