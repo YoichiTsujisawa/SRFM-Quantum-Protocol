@@ -2,36 +2,48 @@
 ### Robust Quantum Search & Stabilization Protocol for NISQ Devices
 
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![Platform](https://img.shields.io/badge/Platform-IBM%20Quantum-blue)](https://quantum.ibm.com/)
 
 ## Overview
 **SRFM (Self-Regulating Field Model)** is a novel quantum search algorithm designed specifically for Noisy Intermediate-Scale Quantum (NISQ) devices. Unlike conventional Grover's algorithm, SRFM utilizes **intentional gate imperfections** and **dissipative dynamics** to stabilize the target quantum state without quantum error correction.
 
 This protocol demonstrates that noise and decoherence can be harnessed to form a **stable eigenspace (attractor)**, achieving high-fidelity convergence even in imperfect hardware environments.
 
+> **⚠️ Tested on Real Quantum Hardware (IBM Quantum 'ibm_marrakesh')**
+> This protocol has been experimentally validated on the **156-qubit Heron processor**, demonstrating robustness against physical noise and coherent errors.
+
 ---
 
 ## Key Features
 * **Noise Resilience:** Maintains >90% fidelity under significant gate errors (e.g., $Rx(0.9\pi)$).
-* **Calibration-Free:** Operates robustly without precise pulse calibration.
+* **Calibration-Free:** Operates robustly without precise pulse calibration, treating errors as a resource.
 * **Subspace Stabilization:** Convergence to a specific eigenspace (e.g., $|1*1\rangle$ in 3-qubit systems) rather than a single point, providing structural stability.
 
 ---
 
-## Experimental Results (IBM Quantum)
+## Experimental Results
+
+### Experimental Setup
+The experiments were conducted on the **IBM Quantum 'ibm_marrakesh'** backend, utilizing the latest tunable coupler architecture to verify SRFM's stability.
+
+* **Platform:** IBM Quantum Platform
+* **Backend:** `ibm_marrakesh` (156-qubit Heron Processor)
+* **Shots:** 4000
+* **Optimization Level:** 1 (Light optimization to preserve intentional noise)
 
 ### 1. Robustness against Gate Errors (2-Qubit)
 Testing with intentional $10\%$ under-rotation ($Rx(0.9\pi)$) on IBM Quantum hardware.
-* **Result:** The target state $|11\rangle$ achieved **>90% probability**, significantly outperforming standard amplitude amplification.
+* **Result:** The target state $|11\rangle$ achieved **>90% probability**, significantly outperforming standard amplitude amplification which collapses under similar errors.
 
 ### 2. Resilience to Decoherence (Idle Noise)
 Testing with inserted `Identity` gates and `Barriers` to induce relaxation.
-* **Result:** The system self-corrected the phase drift, maintaining the target peak.
+* **Result:** The system self-corrected the phase drift, maintaining the target peak despite the extended circuit duration.
 
 ### 3. Scalability (3-Qubit Expansion)
-Despite the increased circuit depth and connectivity overhead (SWAP/CNOT), the protocol successfully identified the target subspace.
-* **Observation:** Convergence to $|111\rangle$ and $|101\rangle$ suggests the formation of a **Decoherence-Free Subspace (DFS)-like structure**, where $q_1$ acts as a buffer degree of freedom.
+Despite the increased circuit depth and connectivity overhead, the protocol successfully identified the target subspace.
+* **Observation:** Convergence to $|111\rangle$ and $|101\rangle$ suggests the formation of a **Decoherence-Free Subspace (DFS)-like structure**.
 
-*(Please refer to the `/data` folder for raw Qiskit results and histograms.)*
+*(Please refer to the `/results` folder for raw Qiskit job data and histograms.)*
 
 ---
 
@@ -41,6 +53,17 @@ Eigenvalue analysis of the SRFM unitary operator $U_{SRFM}$ reveals that the tar
 $$
 U_{SRFM} |\psi_{target}\rangle \approx e^{i\phi} |\psi_{target}\rangle
 $$
+
+The data confirms that the system naturally selects the eigenspace with the highest information density, effectively acting as a "quantum attractor."
+
+---
+
+## Potential Applications & Future Outlook
+This protocol addresses critical bottlenecks in the NISQ era, shifting the paradigm from "speed" to "stability."
+
+1.  **Hardware-Efficient Error Mitigation:** Reducing the qubit overhead for logical protection in NISQ devices.
+2.  **Robust VQE/QAOA:** Stabilizing the optimization landscape to avoid barren plateaus in quantum machine learning.
+3.  **Dissipative State Preparation:** Utilizing noise engineering for quantum memory and long-duration simulation (e.g., for chemistry/materials).
 
 ---
 
@@ -59,9 +82,9 @@ This project is licensed under the **Creative Commons Attribution-NonCommercial 
 ## Contact for Commercial Licensing
 For commercial usage, joint research, or technical advisory, please contact the author:
 
-**[Yoichi Tsujisawa]**
-* Email: [yoichiwind@gmail.com]
-* Profile: [Link to Zenodo or LinkedIn if available]
+**Yoichi** (Independent Researcher)
+* **Email:** [Your Contact Email]
+* **Profile:** [Link to Zenodo or other profile if available]
 
 ---
 *© 2026 Yoichi. All rights reserved.*
