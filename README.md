@@ -1,7 +1,7 @@
 # SRFM: Self-Regulating Field Model
 ### Robust Quantum Search & Stabilization Protocol for NISQ Devices
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18644344.svg)](https://doi.org/10.5281/zenodo.18644344)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18666966.svg)](https://doi.org/10.5281/zenodo.18666966)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 [![Platform](https://img.shields.io/badge/Platform-IBM%20Quantum%20(Heron)-blue)](https://quantum.ibm.com/)
 
